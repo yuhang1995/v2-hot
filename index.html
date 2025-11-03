@@ -1,875 +1,173 @@
 <!DOCTYPE html>
-<!-- saved from url=(0014)about:internet -->
 <html lang="zh-CN">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <style type="text/css">.tippy-touch {
-      cursor: pointer !important
-  }
-
-  .tippy-notransition {
-      transition: none !important
-  }
-
-  .tippy-popper {
-      max-width: 350px;
-      -webkit-perspective: 700px;
-      perspective: 700px;
-      z-index: 9999;
-      outline: 0;
-      transition-timing-function: cubic-bezier(.165, .84, .44, 1);
-      pointer-events: none
-  }
-
-  .tippy-popper[data-html] {
-      max-width: 96%;
-      max-width: calc(100% - 20px)
-  }
-
-  .tippy-popper[x-placement^=top] .tippy-backdrop {
-      border-radius: 40% 40% 0 0
-  }
-
-  .tippy-popper[x-placement^=top] .tippy-roundarrow {
-      width: 23px;
-      height: 23px;
-      fill: #333;
-      bottom: -15px;
-      margin: 0 6px
-  }
-
-  .tippy-popper[x-placement^=top] .tippy-roundarrow svg {
-      -webkit-transform: rotate(180deg);
-      transform: rotate(180deg)
-  }
-
-  .tippy-popper[x-placement^=top] .tippy-arrow {
-      border-top: 7px solid #333;
-      border-right: 7px solid transparent;
-      border-left: 7px solid transparent;
-      bottom: -7px;
-      margin: 0 7px
-  }
-
-  .tippy-popper[x-placement^=top] .tippy-backdrop {
-      -webkit-transform-origin: 0 100%;
-      transform-origin: 0 100%
-  }
-
-  .tippy-popper[x-placement^=top] .tippy-backdrop[data-state=visible] {
-      -webkit-transform: scale(5.5) translate(-50%, 25%);
-      transform: scale(5.5) translate(-50%, 25%);
-      opacity: 1
-  }
-
-  .tippy-popper[x-placement^=top] .tippy-backdrop[data-state=hidden] {
-      -webkit-transform: scale(1) translate(-50%, 25%);
-      transform: scale(1) translate(-50%, 25%);
-      opacity: 0
-  }
-
-  .tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateY(-10px);
-      transform: translateY(-10px)
-  }
-
-  .tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateY(-20px);
-      transform: translateY(-20px)
-  }
-
-  .tippy-popper[x-placement^=top] [data-animation=perspective] {
-      -webkit-transform-origin: bottom;
-      transform-origin: bottom
-  }
-
-  .tippy-popper[x-placement^=top] [data-animation=perspective][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateY(-10px) rotateX(0);
-      transform: translateY(-10px) rotateX(0)
-  }
-
-  .tippy-popper[x-placement^=top] [data-animation=perspective][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateY(0) rotateX(90deg);
-      transform: translateY(0) rotateX(90deg)
-  }
-
-  .tippy-popper[x-placement^=top] [data-animation=fade][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateY(-10px);
-      transform: translateY(-10px)
-  }
-
-  .tippy-popper[x-placement^=top] [data-animation=fade][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateY(-10px);
-      transform: translateY(-10px)
-  }
-
-  .tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateY(-10px);
-      transform: translateY(-10px)
-  }
-
-  .tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateY(0);
-      transform: translateY(0)
-  }
-
-  .tippy-popper[x-placement^=top] [data-animation=scale][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateY(-10px) scale(1);
-      transform: translateY(-10px) scale(1)
-  }
-
-  .tippy-popper[x-placement^=top] [data-animation=scale][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateY(0) scale(0);
-      transform: translateY(0) scale(0)
-  }
-
-  .tippy-popper[x-placement^=bottom] .tippy-backdrop {
-      border-radius: 0 0 30% 30%
-  }
-
-  .tippy-popper[x-placement^=bottom] .tippy-roundarrow {
-      width: 23px;
-      height: 23px;
-      fill: #333;
-      top: -15px;
-      margin: 0 6px
-  }
-
-  .tippy-popper[x-placement^=bottom] .tippy-roundarrow svg {
-      -webkit-transform: rotate(0);
-      transform: rotate(0)
-  }
-
-  .tippy-popper[x-placement^=bottom] .tippy-arrow {
-      border-bottom: 7px solid #333;
-      border-right: 7px solid transparent;
-      border-left: 7px solid transparent;
-      top: -7px;
-      margin: 0 7px
-  }
-
-  .tippy-popper[x-placement^=bottom] .tippy-backdrop {
-      -webkit-transform-origin: 0 -100%;
-      transform-origin: 0 -100%
-  }
-
-  .tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=visible] {
-      -webkit-transform: scale(5.5) translate(-50%, -125%);
-      transform: scale(5.5) translate(-50%, -125%);
-      opacity: 1
-  }
-
-  .tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=hidden] {
-      -webkit-transform: scale(1) translate(-50%, -125%);
-      transform: scale(1) translate(-50%, -125%);
-      opacity: 0
-  }
-
-  .tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateY(10px);
-      transform: translateY(10px)
-  }
-
-  .tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateY(20px);
-      transform: translateY(20px)
-  }
-
-  .tippy-popper[x-placement^=bottom] [data-animation=perspective] {
-      -webkit-transform-origin: top;
-      transform-origin: top
-  }
-
-  .tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateY(10px) rotateX(0);
-      transform: translateY(10px) rotateX(0)
-  }
-
-  .tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateY(0) rotateX(-90deg);
-      transform: translateY(0) rotateX(-90deg)
-  }
-
-  .tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateY(10px);
-      transform: translateY(10px)
-  }
-
-  .tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateY(10px);
-      transform: translateY(10px)
-  }
-
-  .tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateY(10px);
-      transform: translateY(10px)
-  }
-
-  .tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateY(0);
-      transform: translateY(0)
-  }
-
-  .tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateY(10px) scale(1);
-      transform: translateY(10px) scale(1)
-  }
-
-  .tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateY(0) scale(0);
-      transform: translateY(0) scale(0)
-  }
-
-  .tippy-popper[x-placement^=left] .tippy-backdrop {
-      border-radius: 30% 0 0 30%
-  }
-
-  .tippy-popper[x-placement^=left] .tippy-roundarrow {
-      width: 23px;
-      height: 23px;
-      fill: #333;
-      right: -15px;
-      margin: 4px 0
-  }
-
-  .tippy-popper[x-placement^=left] .tippy-roundarrow svg {
-      -webkit-transform: rotate(90deg);
-      transform: rotate(90deg)
-  }
-
-  .tippy-popper[x-placement^=left] .tippy-arrow {
-      border-left: 7px solid #333;
-      border-top: 7px solid transparent;
-      border-bottom: 7px solid transparent;
-      right: -7px;
-      margin: 4px 0
-  }
-
-  .tippy-popper[x-placement^=left] .tippy-backdrop {
-      -webkit-transform-origin: 100% 0;
-      transform-origin: 100% 0
-  }
-
-  .tippy-popper[x-placement^=left] .tippy-backdrop[data-state=visible] {
-      -webkit-transform: scale(5.5) translate(33%, -50%);
-      transform: scale(5.5) translate(33%, -50%);
-      opacity: 1
-  }
-
-  .tippy-popper[x-placement^=left] .tippy-backdrop[data-state=hidden] {
-      -webkit-transform: scale(1.5) translate(33%, -50%);
-      transform: scale(1.5) translate(33%, -50%);
-      opacity: 0
-  }
-
-  .tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateX(-10px);
-      transform: translateX(-10px)
-  }
-
-  .tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateX(-20px);
-      transform: translateX(-20px)
-  }
-
-  .tippy-popper[x-placement^=left] [data-animation=perspective] {
-      -webkit-transform-origin: right;
-      transform-origin: right
-  }
-
-  .tippy-popper[x-placement^=left] [data-animation=perspective][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateX(-10px) rotateY(0);
-      transform: translateX(-10px) rotateY(0)
-  }
-
-  .tippy-popper[x-placement^=left] [data-animation=perspective][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateX(0) rotateY(-90deg);
-      transform: translateX(0) rotateY(-90deg)
-  }
-
-  .tippy-popper[x-placement^=left] [data-animation=fade][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateX(-10px);
-      transform: translateX(-10px)
-  }
-
-  .tippy-popper[x-placement^=left] [data-animation=fade][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateX(-10px);
-      transform: translateX(-10px)
-  }
-
-  .tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateX(-10px);
-      transform: translateX(-10px)
-  }
-
-  .tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateX(0);
-      transform: translateX(0)
-  }
-
-  .tippy-popper[x-placement^=left] [data-animation=scale][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateX(-10px) scale(1);
-      transform: translateX(-10px) scale(1)
-  }
-
-  .tippy-popper[x-placement^=left] [data-animation=scale][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateX(0) scale(0);
-      transform: translateX(0) scale(0)
-  }
-
-  .tippy-popper[x-placement^=right] .tippy-backdrop {
-      border-radius: 0 30% 30% 0
-  }
-
-  .tippy-popper[x-placement^=right] .tippy-roundarrow {
-      width: 23px;
-      height: 23px;
-      fill: #333;
-      left: -15px;
-      margin: 4px 0
-  }
-
-  .tippy-popper[x-placement^=right] .tippy-roundarrow svg {
-      -webkit-transform: rotate(-90deg);
-      transform: rotate(-90deg)
-  }
-
-  .tippy-popper[x-placement^=right] .tippy-arrow {
-      border-right: 7px solid #333;
-      border-top: 7px solid transparent;
-      border-bottom: 7px solid transparent;
-      left: -7px;
-      margin: 4px 0
-  }
-
-  .tippy-popper[x-placement^=right] .tippy-backdrop {
-      -webkit-transform-origin: -100% 0;
-      transform-origin: -100% 0
-  }
-
-  .tippy-popper[x-placement^=right] .tippy-backdrop[data-state=visible] {
-      -webkit-transform: scale(5.5) translate(-133%, -50%);
-      transform: scale(5.5) translate(-133%, -50%);
-      opacity: 1
-  }
-
-  .tippy-popper[x-placement^=right] .tippy-backdrop[data-state=hidden] {
-      -webkit-transform: scale(1.5) translate(-133%, -50%);
-      transform: scale(1.5) translate(-133%, -50%);
-      opacity: 0
-  }
-
-  .tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateX(10px);
-      transform: translateX(10px)
-  }
-
-  .tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateX(20px);
-      transform: translateX(20px)
-  }
-
-  .tippy-popper[x-placement^=right] [data-animation=perspective] {
-      -webkit-transform-origin: left;
-      transform-origin: left
-  }
-
-  .tippy-popper[x-placement^=right] [data-animation=perspective][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateX(10px) rotateY(0);
-      transform: translateX(10px) rotateY(0)
-  }
-
-  .tippy-popper[x-placement^=right] [data-animation=perspective][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateX(0) rotateY(90deg);
-      transform: translateX(0) rotateY(90deg)
-  }
-
-  .tippy-popper[x-placement^=right] [data-animation=fade][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateX(10px);
-      transform: translateX(10px)
-  }
-
-  .tippy-popper[x-placement^=right] [data-animation=fade][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateX(10px);
-      transform: translateX(10px)
-  }
-
-  .tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateX(10px);
-      transform: translateX(10px)
-  }
-
-  .tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateX(0);
-      transform: translateX(0)
-  }
-
-  .tippy-popper[x-placement^=right] [data-animation=scale][data-state=visible] {
-      opacity: 1;
-      -webkit-transform: translateX(10px) scale(1);
-      transform: translateX(10px) scale(1)
-  }
-
-  .tippy-popper[x-placement^=right] [data-animation=scale][data-state=hidden] {
-      opacity: 0;
-      -webkit-transform: translateX(0) scale(0);
-      transform: translateX(0) scale(0)
-  }
-
-  .tippy-tooltip {
-      position: relative;
-      color: #fff;
-      border-radius: 4px;
-      font-size: .9rem;
-      padding: .3rem .6rem;
-      text-align: center;
-      will-change: transform;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      background-color: #333
-  }
-
-  .tippy-tooltip[data-size=small] {
-      padding: .2rem .4rem;
-      font-size: .75rem
-  }
-
-  .tippy-tooltip[data-size=large] {
-      padding: .4rem .8rem;
-      font-size: 1rem
-  }
-
-  .tippy-tooltip[data-animatefill] {
-      overflow: hidden;
-      background-color: transparent
-  }
-
-  .tippy-tooltip[data-animatefill] .tippy-content {
-      transition: -webkit-clip-path cubic-bezier(.46, .1, .52, .98);
-      transition: clip-path cubic-bezier(.46, .1, .52, .98);
-      transition: clip-path cubic-bezier(.46, .1, .52, .98), -webkit-clip-path cubic-bezier(.46, .1, .52, .98)
-  }
-
-  .tippy-tooltip[data-interactive] {
-      pointer-events: auto
-  }
-
-  .tippy-tooltip[data-inertia][data-state=visible] {
-      transition-timing-function: cubic-bezier(.53, 2, .36, .85)
-  }
-
-  .tippy-tooltip[data-inertia][data-state=hidden] {
-      transition-timing-function: ease
-  }
-
-  .tippy-arrow, .tippy-roundarrow {
-      position: absolute;
-      width: 0;
-      height: 0
-  }
-
-  .tippy-roundarrow {
-      pointer-events: none
-  }
-
-  .tippy-roundarrow path {
-      pointer-events: auto
-  }
-
-  .tippy-backdrop {
-      position: absolute;
-      will-change: transform;
-      background-color: #333;
-      border-radius: 50%;
-      width: 26%;
-      left: 50%;
-      top: 50%;
-      z-index: -1;
-      transition: all cubic-bezier(.46, .1, .52, .98);
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden
-  }
-
-  .tippy-backdrop:after {
-      content: "";
-      float: left;
-      padding-top: 100%
-  }
-
-  body:not(.tippy-touch) .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content {
-      -webkit-clip-path: ellipse(100% 100% at 50% 50%);
-      clip-path: ellipse(100% 100% at 50% 50%)
-  }
-
-  body:not(.tippy-touch) .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content {
-      -webkit-clip-path: ellipse(5% 50% at 50% 50%);
-      clip-path: ellipse(5% 50% at 50% 50%)
-  }
-
-  body:not(.tippy-touch) .tippy-popper[x-placement=right] .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content {
-      -webkit-clip-path: ellipse(135% 100% at 0 50%);
-      clip-path: ellipse(135% 100% at 0 50%)
-  }
-
-  body:not(.tippy-touch) .tippy-popper[x-placement=right] .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content {
-      -webkit-clip-path: ellipse(25% 100% at 0 50%);
-      clip-path: ellipse(25% 100% at 0 50%)
-  }
-
-  body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content {
-      -webkit-clip-path: ellipse(135% 100% at 100% 50%);
-      clip-path: ellipse(135% 100% at 100% 50%)
-  }
-
-  body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content {
-      -webkit-clip-path: ellipse(25% 100% at 100% 50%);
-      clip-path: ellipse(25% 100% at 100% 50%)
-  }
-
-  @media (max-width: 360px) {
-      .tippy-popper {
-          max-width: 96%;
-          max-width: calc(100% - 20px)
-      }
-  }</style>
-  <meta name="Content-Type" content="text/html;charset=utf-8">
-  <meta name="Referrer" content="unsafe-url">
-  <meta content="True" name="HandheldFriendly">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb">
-  <meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0">
-  <meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY">
-  <meta name="baidu-site-verification" content="D00WizvYyr">
-  <meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE">
-  <meta property="wb:webmaster" content="f2f4cb229bda06a4">
-  <meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU">
-  <meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445">
-  <script async="" src="public/V2EX_files/analytics.js.下载"></script>
-  <script type="text/javascript" src="public/V2EX_files/makemoney.js.下载" async=""></script>
-  <script async="" src="public/V2EX_files/f.txt" crossorigin="anonymous"></script>
-  <title>V2EX</title>
-  <link rel="dns-prefetch" href="https://static.v2ex.com/">
-  <link rel="dns-prefetch" href="https://cdn.v2ex.com/">
-  <link rel="dns-prefetch" href="https://i.v2ex.co/">
-  <link rel="dns-prefetch" href="https://www.google-analytics.com/">
-  <style>
-      body {
-          min-width: 820px;
-          font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
-      }
-  </style>
-  <link rel="stylesheet" type="text/css" media="screen"
-        href="public/V2EX_files/041b65a587cf8204f8a8164b90cd8ceb5c14eb86-combo.css">
-  <script>
-    const SITE_NIGHT = 0;
-  </script>
-  <link rel="stylesheet" href="public/V2EX_files/tomorrow.css" type="text/css">
-  <link rel="icon" sizes="192x192" href="https://www.v2ex.com/static/icon-192.png">
-  <link rel="apple-touch-icon" sizes="180x180"
-        href="https://www.v2ex.com/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
-  <link rel="shortcut icon" href="https://www.v2ex.com/static/favicon.ico" type="image/png">
-  <meta property="og:image" content="/static/icon-192.png">
-  <meta name="twitter:image" content="/static/icon-192.png">
-  <link rel="manifest" href="https://www.v2ex.com/manifest.webmanifest">
-  <script src="public/V2EX_files/68957da5f1064cfb0f0533e1417bfa3246e41c1e-combo.js.下载" defer=""></script>
-  <meta name="description" content="创意工作者的社区。讨论编程、设计、硬件、游戏等令人激动的话题。">
-  <link rel="canonical" href="https://www.v2ex.com/">
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <meta charset="UTF-8">
+    <title>V2EX 热榜展示</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #fafbfc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 48px auto 0 auto;
+            padding: 32px 16px 16px 16px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px 0 #ececec;
+        }
+
+        h1 {
+            font-size: 1.25em;
+            font-weight: bold;
+            margin-bottom: 1em;
+            letter-spacing: 1px;
+        }
+
+        label {
+            font-size: 1em;
+            margin-right: 8px;
+        }
+
+        select {
+            font-size: 1em;
+            padding: 3px 12px;
+            border-radius: 6px;
+            border: 1px solid #d0d0d5;
+            margin-bottom: 28px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 9px 4px;
+            font-size: 0.99em;
+        }
+
+        th {
+            background: #f6f6fa;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #e0e2e8;
+        }
+
+        td {
+            border-bottom: 1px solid #f0f0f3;
+        }
+
+        td img {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: cover;
+            vertical-align: middle;
+            margin-right: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        td a {
+            color: #315efb;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: #f44336;
+            margin-bottom: 18px;
+        }
+
+        .empty {
+            color: #777;
+            text-align: center;
+            margin: 32px 0;
+        }
+
+        @media (max-width:720px) {
+            .container {
+                max-width: 98vw;
+                padding: 8vw 2vw;
+            }
+
+            th,
+            td {
+                font-size: 0.95em;
+                padding: 8px 2px;
+            }
+        }
+    </style>
 </head>
-<body>
-<div id="Top">
-  <div class="content">
-    <div class="site-nav">
-      <a href="https://www.v2ex.com/" title="way to explore">
-        <div id="Logo"></div>
-      </a>
-      <div id="search-container">
-        <input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
-        <div id="search-result" class="box"></div>
-      </div>
-      <div class="tools">
-        <a href="https://www.v2ex.com/" class="top">首页</a>
-        <a href="https://www.v2ex.com/signup" class="top">注册</a>
-        <a href="https://www.v2ex.com/signin" class="top">登录</a>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="Wrapper">
-  <div class="content">
-    <div id="Leftbar"></div>
-    <div id="Rightbar">
-      <div class="sep20"></div>
-      <div class="box">
-        <div class="calender">
-          <div class="date" v-for="i in dateMap">
-            {{i}}
-          </div>
-        </div>
-      </div>
-      <div class="sep20"></div>
-      <div class="box">
-        <div class="cell">
-          <strong>V2EX = way to explore</strong>
-          <div class="sep5"></div>
-          <span class="fade">V2EX 是一个关于分享和探索的地方</span>
-        </div>
-        <div class="inner">
-          <div class="sep5"></div>
-          <div align="center"><a href="https://www.v2ex.com/signup" class="super normal button">现在注册</a>
-            <div class="sep5"></div>
-            <div class="sep10"></div>
-            已注册用户请 &nbsp;<a href="https://www.v2ex.com/signin">登录</a></div>
-        </div>
-      </div>
-      <div class="sep20"></div>
-      <div class="box">
-        <div class="cell">
-          <div class="fr"></div>
-          <span class="fade">最热节点</span></div>
-        <div class="cell">
-          <a href="https://www.v2ex.com/go/qna" class="item_node">问与答</a>
-          <a href="https://www.v2ex.com/go/programmer" class="item_node">程序员</a><a
-            href="https://www.v2ex.com/go/jobs" class="item_node">酷工作</a>
-          <a href="https://www.v2ex.com/go/share" class="item_node">分享发现</a>
-          <a href="https://www.v2ex.com/go/apple" class="item_node">Apple</a>
-          <a href="https://www.v2ex.com/go/create" class="item_node">分享创造</a><a
-            href="https://www.v2ex.com/go/macos" class="item_node">macOS</a>
-          <a href="https://www.v2ex.com/go/career" class="item_node">职场话题</a>
-          <a href="https://www.v2ex.com/go/bb" class="item_node">宽带症候群</a>
-          <a href="https://www.v2ex.com/go/python" class="item_node">Python</a>
-          <a href="https://www.v2ex.com/go/android" class="item_node">Android</a>
-          <a href="https://www.v2ex.com/go/iphone" class="item_node">iPhone</a>
-          <a href="https://www.v2ex.com/go/gts" class="item_node">全球工单系统</a>
-          <a href="https://www.v2ex.com/go/mbp" class="item_node">MacBook Pro</a>
-          <a href="https://www.v2ex.com/go/promotions" class="item_node">推广</a>
-        </div>
-        <div class="inner">
-          <a href="https://www.v2ex.com/index.xml" target="_blank">
-            <img src="public/V2EX_files/rss@2x.png"
-                 align="absmiddle" border="0"
-                 style="margin-top:-3px; width: 16px;">
-          </a>&nbsp;
-          <a href="https://www.v2ex.com/index.xml" target="_blank">RSS</a>&nbsp;
-        </div>
-      </div>
-      <div class="sep20"></div>
-      <div class="box">
-        <div class="cell">
-          <div class="fr"></div>
-          <span class="fade">最近新增节点</span></div>
-        <div class="inner">
-          <a href="https://www.v2ex.com/go/fishing" class="item_node">钓鱼</a><a href="https://www.v2ex.com/go/vxna"
-                                                                                 class="item_node">VXNA</a><a
-            href="https://www.v2ex.com/go/ens" class="item_node">ENS</a><a href="https://www.v2ex.com/go/genshin"
-                                                                           class="item_node">原神</a><a
-            href="https://www.v2ex.com/go/macos9" class="item_node">Mac OS 9</a><a
-            href="https://www.v2ex.com/go/diablo4" class="item_node">Diablo IV</a><a
-            href="https://www.v2ex.com/go/nostr" class="item_node">nostr</a><a href="https://www.v2ex.com/go/freeform"
-                                                                               class="item_node">Freeform</a><a
-            href="https://www.v2ex.com/go/openai" class="item_node">OpenAI</a><a href="https://www.v2ex.com/go/handheld"
-                                                                                 class="item_node">掌机</a><a
-            href="https://www.v2ex.com/go/yubikey" class="item_node">YubiKey</a><a href="https://www.v2ex.com/go/logseq"
-                                                                                   class="item_node">Logseq</a><a
-            href="https://www.v2ex.com/go/planet" class="item_node">Planet</a><a
-            href="https://www.v2ex.com/go/soulslike" class="item_node">魂系游戏</a><a
-            href="https://www.v2ex.com/go/macstudio" class="item_node">Mac Studio</a><a
-            href="https://www.v2ex.com/go/zoom" class="item_node">Zoom</a><a href="https://www.v2ex.com/go/imovie"
-                                                                             class="item_node">iMovie</a><a
-            href="https://www.v2ex.com/go/xboxseries" class="item_node">Xbox Series X/S</a><a
-            href="https://www.v2ex.com/go/nixos" class="item_node">NixOS</a>
-        </div>
-      </div>
-      <div class="sep20"></div>
-      <div class="box">
-        <div class="cell"><span class="fade">社区运行状况</span></div>
-        <div class="cell">
-          <table cellpadding="5" cellspacing="0" border="0" width="100%">
-            <tbody>
-            <tr>
-              <td width="60" align="right"><span class="gray">注册会员</span></td>
-              <td width="auto" align="left"><strong>714,987</strong></td>
-            </tr>
-            <tr>
-              <td width="60" align="right"><span class="gray">主题</span></td>
-              <td width="auto" align="left"><strong>1,080,359</strong></td>
-            </tr>
-            <tr>
-              <td width="60" align="right"><span class="gray">回复</span></td>
-              <td width="auto" align="left"><strong>15,384,517</strong></td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="inner">
-          <span class="chevron">›</span> <a href="https://www.v2ex.com/top/rich">财富排行榜</a>
-          <div class="sep5"></div>
-          <span class="chevron">›</span> <a href="https://www.v2ex.com/top/player">消费排行榜</a>
-        </div>
-      </div>
-      <div class="sep20"></div>
-    </div>
-    <div id="Main">
-      <div class="sep20"></div>
-      <div class="box">
-        <div class="cell" id="Tabs">
-          <a href="https://www.v2ex.com/?tab=tech" class="tab">技术</a>
-          <a href="https://www.v2ex.com/?tab=creative" class="tab">创意</a>
-          <a href="https://www.v2ex.com/?tab=play" class="tab">好玩</a>
-          <a href="https://www.v2ex.com/?tab=apple" class="tab">Apple</a>
-          <a href="https://www.v2ex.com/?tab=jobs" class="tab">酷工作</a>
-          <a href="https://www.v2ex.com/?tab=deals" class="tab">交易</a>
-          <a href="https://www.v2ex.com/?tab=city" class="tab">城市</a>
-          <a href="https://www.v2ex.com/?tab=qna" class="tab">问与答</a>
-          <a href="https://www.v2ex.com/?tab=hot" class="tab_current">最热</a>
-          <a href="https://www.v2ex.com/?tab=all" class="tab">全部</a>
-          <a href="https://www.v2ex.com/?tab=r2" class="tab">R2</a>
-          <a href="https://www.v2ex.com/xna" class="tab">VXNA</a>
-        </div>
-        <div class="cell item" style="" v-for="i in list">
-          <table cellpadding="0" cellspacing="0" border="0" width="100%">
-            <tbody>
-            <tr>
-              <td width="48" valign="top" align="center"><a target="_blank"
-                                                            :href="`https://www.v2ex.com/member/${i.username}`">
-                <img :src="i.avatar"
-                     class="avatar"
-                     border="0"
-                     align="default"
-                     width="48"
-                     style="width: 48px; max-height: 48px;"
-                     :alt="i.username"></a>
-              </td>
-              <td width="10"></td>
-              <td width="auto" valign="middle">
-                  <span class="item_title">
-                    <a target="_blank" :href="`https://www.v2ex.com/t/${i.id}#reply${i.replyCount}`" class="topic-link"
-                       id="topic-link-1080288">{{i.title}}</a>
-                  </span>
-                <div class="sep5"></div>
-                <span class="topic_info">
-                    <div class="votes"></div>
-                    <a target="_blank" class="node" :href="`https://www.v2ex.com/go/${i.nodeUrl}`">{{i.nodeTitle}}</a> &nbsp;•&nbsp; <strong>
-                    <a target="_blank" :href="`https://www.v2ex.com/member/${i.username}`">{{i.username}}</a>
-                  </strong> &nbsp;•&nbsp; <span :title="i.lastReplyDate">{{i.lastReplyDateAgo}}</span> &nbsp;•&nbsp; 最后回复来自 <strong>
-                    <a target="_blank"
-                       :href="`https://www.v2ex.com/member/${i.lastReplyUsername}`">{{i.lastReplyUsername}}</a></strong>
-                  </span>
-              </td>
-              <td width="70" align="right" valign="middle">
-                <a target="_blank" :href="`https://www.v2ex.com/t/${i.id}#reply${i.replyCount}`"
-                   class="count_livid">{{i.replyCount}}</a>
-              </td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="inner">
-          <span class="chevron">»</span> &nbsp;<a href="https://www.v2ex.com/recent">更多新主题</a>
-        </div>
-      </div>
-      <div class="sep20"></div>
-    </div>
-  </div>
-  <div class="c"></div>
-  <div class="sep20"></div>
-</div>
-<div id="Bottom">
-  <div class="content">
-    <div class="inner">
-      <div class="sep10"></div>
-      <div class="fr">
-        <a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank">
-          <div id="DigitalOcean"></div>
-        </a>
-      </div>
-      <strong><a href="https://www.v2ex.com/about" class="dark" target="_self">关于</a> &nbsp; <span
-          class="snow">·</span> &nbsp; <a href="https://www.v2ex.com/help" class="dark" target="_self">帮助文档</a>
-        &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a>
-        &nbsp; <span class="snow">·</span> &nbsp; <a href="https://www.v2ex.com/help/api" class="dark" target="_self">API</a>
-        &nbsp; <span class="snow">·</span> &nbsp; <a href="https://www.v2ex.com/faq" class="dark" target="_self">FAQ</a>
-        &nbsp; <span class="snow">·</span> &nbsp; <a href="https://www.v2ex.com/tools" class="dark"
-                                                     target="_self">实用小工具</a> &nbsp; <span class="snow">·</span>
-        &nbsp; 5841 人在线</strong> &nbsp; <span class="fade">最高记录 6679</span> &nbsp; <span class="snow">·</span>
-      &nbsp; <a href="https://www.v2ex.com/select/language" class="f11"><img src="public/V2EX_files/language.png"
-                                                                             width="16"
-                                                                             align="absmiddle" id="ico-select-language">
-      &nbsp; Select Language</a>
-      <div class="sep20"></div>
-      创意工作者们的社区
-      <div class="sep5"></div>
-      World is powered by solitude
-      <div class="sep20"></div>
-      <span class="small fade">VERSION: 3.9.8.5 · 151ms · <a href="https://www.v2ex.com/worldclock#utc">UTC 02:40</a> · <a
-          href="https://www.v2ex.com/worldclock#pvg">PVG 10:40</a> · <a href="https://www.v2ex.com/worldclock#lax">LAX 19:40</a> · <a
-          href="https://www.v2ex.com/worldclock#jfk">JFK 22:40</a><br>Developed with <a href="https://cl.v2ex.pro/"
-                                                                                        target="_blank">CodeLauncher</a><br>♥ Do have faith in what you're doing.</span>
-      <div class="sep10"></div>
-    </div>
-  </div>
-</div>
-</body>
-<script>
-  const {createApp, ref, onMounted} = Vue
 
-  createApp({
-    setup() {
-      const list = ref([])
-      const dateMap = ref([])
-      onMounted(async () => {
-        let map = await fetch('/hot/map.json')
-        let r1 = await map.json()
-        dateMap.value = r1
-        let r = await fetch(`/hot/${r1[0]}.json`)
-        let r2 = await r.json()
-        console.log('r', r2, r1)
-        list.value = r2
-      })
-      return {
-        dateMap,
-        list
-      }
-    }
-  }).mount('#Wrapper')
-</script>
+<body>
+    <div class="container">
+        <h1>V2EX 热榜展示</h1>
+        <label for="jsonPicker">榜单选择：</label>
+        <select id="jsonPicker">
+            <option value="3d.json">三日热榜</option>
+            <option value="7d.json">七日热榜</option>
+            <option value="30d.json">三十日热榜</option>
+        </select>
+        <div id="output"></div>
+    </div>
+    <script>
+        const baseUrl = './public/hot/';
+
+        function loadJson(file) {
+            const url = baseUrl + file;
+            fetch(url)
+                .then(res => {
+                    if (!res.ok) throw new Error(`请求失败: ${res.status}`);
+                    return res.json();
+                })
+                .then(data => {
+                    renderTable(data);
+                })
+                .catch(err => {
+                    document.getElementById('output').innerHTML =
+                        `<div class="error">加载失败：${err.message}</div>`;
+                });
+        }
+        function renderTable(arr) {
+            if (!Array.isArray(arr) || arr.length === 0) {
+                document.getElementById('output').innerHTML = '<div class="empty">暂无数据</div>';
+                return;
+            }
+            let html = `<table><tr>
+        <th>头像</th>
+        <th>标题</th>
+        <th>回复</th>
+        <th>作者</th>
+        <th>ID</th>
+      </tr>`;
+            for (const item of arr) {
+                html += `<tr>
+          <td><img src="${item.avatar}" alt="avatar"></td>
+          <td><a href="https://www.v2ex.com/t/${item.id}" target="_blank">${item.title}</a></td>
+          <td>${item.replyCount}</td>
+          <td>${item.username}</td>
+          <td>${item.id}</td>
+        </tr>`;
+            }
+            html += '</table>';
+            document.getElementById('output').innerHTML = html;
+        }
+        // 初始化
+        const picker = document.getElementById('jsonPicker');
+        picker.addEventListener('change', () => loadJson(picker.value));
+        loadJson(picker.value); // 默认加载
+    </script>
+</body>
+
 </html>

@@ -3,16 +3,12 @@ name: Upload Generated Files to Repository
 on:
   push:
     branches:
-      - master # 监听主分支上的 push 操作
+      - hot # 监听 hot 分支上的 push 操作
 
   schedule:
-#     - cron: '*/30 * * * *'
-#     - cron: '0 14 * * *'  # 每天的 22 点执行
-#     - cron: '0 15 * * *'  # 每天的 23 点执行
-    - cron: '30 15 * * *'  # 每天的 23 点 50 分执行
-#     - cron: '0 22 * * *'  # 每天的 22 点执行
-#     - cron: '0 23 * * *'  # 每天的 23 点执行
-#     - cron: '30 23 * * *'  # 每天的 23 点 50 分执行
+    - cron: '0 0 * * *'   # 每天 08:00 执行（北京时间）
+    - cron: '0 5 * * *'   # 每天 13:00 执行（北京时间）
+    - cron: '0 9 * * *'   # 每天 17:00 执行（北京时间）
 
 # 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages。
 permissions:
@@ -25,16 +21,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 检出仓库代码
+      # 检出 hot 分支代码
       - name: Checkout repository
         uses: actions/checkout@v3
-
-        # 2. 拉取最新的代码
-      - name: Pull latest changes from hot
-        run: |
-          git fetch origin
-          git checkout hot
-          git pull origin hot
+        with:
+          ref: hot  # 直接检出 hot 分支
+          fetch-depth: 0  # 获取完整历史记录
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
@@ -70,4 +62,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 提供的 GITHUB_TOKEN
         run: |
-          git push origin HEAD:hot
+          git push origin hot
